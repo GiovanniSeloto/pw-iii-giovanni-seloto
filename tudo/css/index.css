@@ -1,0 +1,56 @@
+/* Reset some default browser styles */
+body, h1, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+.container {
+    text-align: center;
+    background: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+a {
+    display: inline-block;
+    font-size: 1rem;
+    color: #007bff; /* Blue color */
+    text-decoration: none;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+}
+
+a:hover {
+    background-color: #007bff; /* Blue color */
+    color: #fff;
+}
+
+.btn-green {
+    color: #fff;
+    background-color: #28a745; /* Green color */
+}
+
+.btn-green:hover {
+    background-color: #218838; /* Darker green on hover */
+}

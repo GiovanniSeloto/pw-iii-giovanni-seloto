@@ -1,0 +1,109 @@
+/* Reset some default browser styles */
+body, h1, label, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Light gray background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+
+.form {
+    flex: 2;
+    padding: 2rem;
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.title h1 {
+    font-size: 2rem;
+    color: #000; /* Black color */
+    text-align: center;
+    margin: 0;
+}
+
+.btn-login button {
+    background: #007bff; /* Blue color */
+    border: none;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-login button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-login button:hover {
+    background: #0056b3; /* Darker blue */
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-box {
+    margin-bottom: 1rem;
+}
+
+.input-box label {
+    display: block;
+    font-size: 0.875rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.input-box input:focus {
+    border-color: #007bff; /* Blue color on focus */
+    outline: none;
+}
+
+.btn-cadastro button {
+    background: #28a745; /* Green color */
+    border: none;
+    padding: 0.75rem 1.5rem;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-cadastro button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-cadastro button:hover {
+    background: #218838; /* Darker green */
+}
