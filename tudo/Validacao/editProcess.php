@@ -2,9 +2,13 @@
    include('../conexao.php');
 
    // Captura dos dados enviados pelo formulário
-   //$sql = ;
+   $sql = "select * from produtoEstoque;" ;
 
-   $id= $_GET=['idProduto'];
+   $stmt1 = $conn->prepare($sql);
+   $stmt1->execute();
+
+
+   $id = $_GET['idProduto'];
    $nomeItem = $_POST['novoNome'];
    $marcaItem = $_POST['novoMarca'];
    $tipoItem = $_POST['novoTipo'];
@@ -15,21 +19,27 @@
                     
 
         "UPDATE produtoEstoque
-        SET nomeProduto = :nomeProduto,
-        marcaProduto = :marcaProduto ,
-        precoProduto = :precoProduto,
-        quantidadeProduto = :quantidadeProduto,
-        tipoProduto = :tipoProduto,
-        WHERE idProduto = $id"
+        SET nomeProduto = :novoNome,
+        marcaProduto = :novaMarca,
+        precoProduto = :novoPreco,
+        quantidadeProduto = :novoQuantidade,
+        tipoProduto = :novoTipo
+        WHERE idProduto = :idProduto"
                         
         );
+        
 
-        $stmt->bindParam(':nomeProduto', $nomeItem);
-        $stmt->bindParam(':marcaProduto', $marcaItem);
-        $stmt->bindParam(':precoProduto', $precoItem);
-        $stmt->bindParam(':quantidadeProduto', $quantidadeItem);
-        $stmt->bindParam(':tipoProduto', $tipoItem);
-        $stmt->bindParam(':id', $id);
-            
-                
+        $stmt->bindParam(':novoNome', $nomeItem);
+        $stmt->bindParam(':novaMarca', $marcaItem);
+        $stmt->bindParam(':novoPreco', $precoItem);
+        $stmt->bindParam(':novoQuantidade', $quantidadeItem);
+        $stmt->bindParam(':novoTipo', $tipoItem);
+        $stmt->bindParam(':idProduto', $id);
+        
+        if($stmt->execute()){
+      
+        
+
+        header('Location: ../painel.php');
+        }
                 ?>

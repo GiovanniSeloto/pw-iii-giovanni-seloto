@@ -9,27 +9,23 @@
 <body>
     
     <?php
+    include("conexao.php");
 
     $id=$_GET['idProduto'];
 
-    include("conexao.php");
 
-
-    $sql= "SELECT * FROM produtoEstoque";
+   
+    $sql= "SELECT * FROM produtoEstoque where idProduto=$id";
     $stmt = $conn->prepare($sql);
-
+    $stmt->execute();
     
-    $nomeItem;
-    $marcaItem; 
-    $tipoItem; 
-    $quantidadeItem; 
-    $precoItem; 
+
     while($row = $stmt->fetch()) {
         $nomeItem = $row['nomeProduto'];
         $marcaItem = $row['marcaProduto'];
         $tipoItem = $row['tipoProduto'];
         $quantidadeItem = $row['quantidadeProduto'];
-        $precoItem = $row['tipoProduto'];
+        $precoItem = $row['precoProduto'];
     } 
     ?>
 
@@ -41,7 +37,7 @@
         
         <div class="form">
             
-        <form action="Validacao/editProcess.php?idProduto=".$id method="post">
+        <form action="Validacao/editProcess.php?idProduto=<?php echo $id?>" method="post">
                 
             <div form="form-header">
                     <div class="title">
@@ -60,28 +56,28 @@
 
                     <div class="input-box">
                         <label for="marca">Marca</label>
-                        <input type="text" id="marca" name="novoMarca" placeholder="Digite a marca" required>
+                        <input type="text" id="marca" name="novoMarca" placeholder="Digite a nova marca" value="<?php echo $marcaItem; ?>" required>
                     </div>
 
                     <div class="input-box">
                         <label for="tipo">Tipo</label>
-                        <input type="text" id="tipo" name="novoTipo" value="Digite o tipo do produto" required>
+                        <input type="text" id="tipo" name="novoTipo" placeholder="Digite o tipo do produto" value="<?php echo $tipoItem; ?>" required>
                     </div>
 
                     <div class="input-box">
                         <label for="quantidade">Quantidade</label>
-                        <input type="text" id="quantidade" name="novoQuantidade" placeholder="Digite a quantidade" required>
+                        <input type="text" id="quantidade" name="novoQuantidade" placeholder="Digite a nova quantidade" value="<?php echo $quantidadeItem; ?>" required>
                     </div>
                     
                     <div class="input-box">
                         <label for="preço">Preço</label>
-                        <input type="text" id="preço" name="novoPreco" placeholder="Digite o valor em reais">
+                        <input type="text" id="preço" name="novoPreco" placeholder="Digite o novo valor em reais" value="<?php echo $precoItem; ?>">
                     </div>
 
                 </div>
 
                 <div class="btn-cadastro">
-                    <button type="submit">Cadastrar</button>
+                    <button type="submit">Atualizar</button>
                 </div>
 
                 
