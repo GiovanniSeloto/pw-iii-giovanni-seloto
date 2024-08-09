@@ -5,9 +5,10 @@ create table produtoEstoque(
 idProduto int not null auto_increment,
 nomeProduto varchar(255),
 marcaProduto varchar(255),
-precoProduto varchar(6),
-quantidadeProduto varchar(5),
 tipoProduto varchar(20),
+quantidadeProduto varchar(5),
+precoProduto varchar(6),
+
 primary key(idProduto)
 );
 
