@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="menu.css">
 </head>
 <body>
-    <h1><a href="index.php">Estoque</a></h1>
+    <h1>
+    <a href="index.php">Estoque</a>
     <a href="cadastro.php">Cadastrar</a>
-    <a href="painel.php">Painel</a>
+    <a href="painel.php">Painel</a></h1>
 </body>
 </html>

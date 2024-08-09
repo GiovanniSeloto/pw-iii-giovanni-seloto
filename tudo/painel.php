@@ -13,11 +13,9 @@
 
       $stmt = $conn->prepare("select * from produtoEstoque order by idProduto desc");
       $stmt->execute(); 
-
-      include('menu.php');
    ?>
    
-   <table>
+   <table class="table table-striped table-hover">
        <thead>
            <tr>
                <th scope="col">#</th>
@@ -67,9 +65,13 @@
                   </form> ";
                 echo "</td>";
             echo "</tr>";
-           }
-           
+           }     
        ?>
      </tbody>
    </table>
+   <div class="container mt-4">
+      <a href="cadastro.php" class="btn btn-secondary mb-4">
+        <i class="bi bi-arrow-left"></i> Voltar para Cadastro
+      </a>
+    </div>
 </body>
