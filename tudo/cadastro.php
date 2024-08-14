@@ -7,14 +7,13 @@
     <title>Projeto Painel de informações</title>
 </head>
 <body>
-    
-    <div class="container-img">
-        <div class="form-img">
-            <img src="img/undraw_forms_re_pkrt.svg" alt="">
+    <header>
+        <div>
+            <button><a href="index.php">Index</a></button>
+            <button><a href="cadastro.php"> Cadastrar </a></button>
+            <button><a href="painel.php">Painel</a></button>
         </div>
-        <?php
-            include('menu.php');
-        ?>
+    </header>
         <div class="form">
             
             <form action="Validacao/VerificarCadastro.php" method="post">
